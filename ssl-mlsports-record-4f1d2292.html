@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>米兰体育 · 从运动中找到节奏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f2f7f9;
+      color: #1f2a33;
+      line-height: 1.6;
+      padding: 1.2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrapper {
+      max-width: 1220px;
+      margin: 0 auto;
+      width: 100%;
+      flex: 1;
+    }
+
+    /* 网格卡片系统 */
+    .grid-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.6rem;
+      margin: 2rem 0;
+    }
+
+    @media (min-width: 600px) {
+      .grid-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 960px) {
+      .grid-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .card-hero {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 1.6rem;
+      padding: 1.8rem 1.6rem;
+      box-shadow: 0 4px 14px rgba(0, 30, 30, 0.04);
+      transition: 0.2s ease;
+      border: 1px solid #dce9ed;
+    }
+
+    .card-hero {
+      background: linear-gradient(145deg, #d9eee8 0%, #e3f3f0 100%);
+      border: none;
+      box-shadow: 0 6px 18px rgba(26, 88, 80, 0.08);
+      padding: 2.2rem 1.8rem;
+    }
+
+    .card-hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: #0d4f47;
+    }
+
+    .card-hero .sub {
+      font-size: 1.1rem;
+      color: #2a5f56;
+      max-width: 34rem;
+    }
+
+    .badge-green {
+      display: inline-block;
+      background: #1b7e70;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.6rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #134e46;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #1c3f3a;
+    }
+
+    .card p {
+      color: #2b4040;
+      font-size: 0.98rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .accent-list {
+      list-style: none;
+      margin-top: 0.4rem;
+    }
+
+    .accent-list li {
+      padding: 0.3rem 0 0.3rem 1.2rem;
+      position: relative;
+      font-size: 0.94rem;
+      color: #21524b;
+    }
+
+    .accent-list li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #1f8f7a;
+      font-weight: bold;
+    }
+
+    .inline-link {
+      color: #1b7e70;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid #9ecfc2;
+      transition: 0.1s;
+    }
+
+    .inline-link:hover {
+      background: #d5f0e7;
+      border-bottom: 1.5px solid #1b7e70;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #d4e6e1;
+      padding: 1rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #154f45;
+      margin-bottom: 0.2rem;
+      font-size: 0.96rem;
+    }
+
+    .faq-a {
+      color: #345a53;
+      font-size: 0.93rem;
+      line-height: 1.5;
+    }
+
+    .hr-natural {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #b8d6ce, transparent);
+      margin: 2rem 0 1.2rem;
+    }
+
+    .footnote {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #54756d;
+      margin: 2.4rem 0 0.4rem;
+      border-top: 1px solid #d0e0da;
+      padding-top: 1.6rem;
+    }
+
+    .footnote a {
+      color: #17685b;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* 移动端微调 */
+    @media (max-width: 480px) {
+      .card-hero h1 {
+        font-size: 1.8rem;
+      }
+      .card {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 主视觉 Hero 卡片 -->
+  <div class="grid-grid">
+    <div class="card card-hero">
+      <span class="badge-green">日常即赛场</span>
+      <h1>米兰体育 · 另一种对话</h1>
+      <p class="sub">运动不是遥远的比赛，而是你早晨的拉伸、午后的步行、周末的一场球。<br>在生活与运动之间，我们试着找到更舒服的节奏。</p>
+    </div>
+
+    <!-- 用途卡片 1：日常节奏 -->
+    <div class="card">
+      <h2>🏃 日常中的运动时刻</h2>
+      <p>也许没有标准训练计划，但总有一段时间属于身体。无论是通勤路上多走两站，还是晚饭后十五分钟拉伸，这些细小的习惯慢慢累积。</p>
+      <p><a href="https://ssl-mlsports.com" class="inline-link">米兰体育</a> 所关注的，正是这些实实在在的日常场景——不刻意、不勉强，把运动融进生活缝隙。</p>
+    </div>
+
+    <!-- 用途卡片 2：轻社交与陪伴 -->
+    <div class="card">
+      <h2>👥 适合谁？不止一种答案</h2>
+      <ul class="accent-list">
+        <li><strong>偶尔想动一动</strong>的人——不需要办年卡，下楼走走也是运动</li>
+        <li><strong>碎片化时间</strong>的利用者——十分钟跟练、工间伸展，没有压力</li>
+        <li><strong>喜欢安静陪伴</strong>的朋友——一个人运动不孤单，有内容可以慢慢看</li>
+        <li><strong>对体育好奇</strong>但怕门槛高——从轻松话题开始，不制造焦虑</li>
+      </ul>
+    </div>
+
+    <!-- 用途卡片 3：自然链接段落 + 人群诠释 -->
+    <div class="card">
+      <h2>🌿 不只关于流汗</h2>
+      <p>运动也关乎呼吸、专注和短暂的放空。有人通过它整理思绪，有人用它来结束忙碌的一天。</p>
+      <p>如果你也认同“运动不必痛苦”，那么 <a href="https://ssl-mlsports.com" class="inline-link">米兰体育</a> 提供的内容或许恰好适合你——不鼓吹苦练，只分享真实的体验和思路。</p>
+    </div>
+  </div>
+
+  <!-- 额外卡片行：场景与 FAQ 摘要（两列布局） -->
+  <div class="grid-grid" style="margin-top: 0.2rem;">
+    <div class="card">
+      <h2>📌 可能出现的场景</h2>
+      <ul class="accent-list">
+        <li>周末想出门但不知道做什么——先走二十分钟再说</li>
+        <li>看比赛很兴奋，自己却很久没动——找个视频跟着做五分钟也好</li>
+        <li>下雨天不想出门——室内原地踏步、拉伸、甚至整理房间都是动</li>
+        <li>和朋友聊起运动，想找个共同话题——可以一起看看 <a href="https://ssl-mlsports.com" class="inline-link">米兰体育</a> 的轻松内容</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>❓ 一些常见小疑问</h2>
+      <div class="faq-item">
+        <div class="faq-q">一定要去健身房才算运动吗？</div>
+        <div class="faq-a">不一定。家、公园、办公室、楼梯间——只要你想，哪里都可以成为运动空间。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">每天只有十分钟，有用吗？</div>
+        <div class="faq-a">坚持的力量比时长更重要。十分钟专注活动，长期来看效果是真实的。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">对运动完全不懂，从哪开始？</div>
+        <div class="faq-a">不用懂术语。从走走路、伸伸懒腰开始就好。<a href="https://ssl-mlsports.com" class="inline-link">米兰体育</a> 的内容也尽量贴近普通人的视角。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 自然链接段落（独立区域，融入叙述） -->
+  <hr class="hr-natural">
+  <div style="max-width: 780px; margin: 0 auto; text-align: left; padding: 0.6rem 0.2rem;">
+    <p style="font-size: 1rem; color: #2a5951;">
+      运动可以是一件很朴素的事。它不需要你立刻改变生活，而是陪你慢慢调整节奏。
+      如果你正在寻找一种没有压力的方式去了解运动、感受运动，不妨看看 
+      <a href="https://ssl-mlsports.com" class="inline-link" style="font-weight: 600;">米兰体育</a> 
+      所分享的内容——关于日常、关于坚持、也关于偶尔的放松。
+    </p>
+  </div>
+
+  <!-- 页脚 -->
+  <div class="footnote">
+    <span>基于真实日常 · 不贩卖焦虑 · 运动属于每个人</span><br>
+    <span style="font-size: 0.8rem; opacity: 0.65;">米兰体育 · 从生活出发</span>
+  </div>
+
+</div>
+</body>
+</html>
